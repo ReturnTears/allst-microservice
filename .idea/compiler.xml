@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="allst-microservice-api" />
         <module name="allst-microservice-consumer" />
+        <module name="allst-microservice-eureka" />
         <module name="allst-microservice-provider" />
       </profile>
     </annotationProcessing>

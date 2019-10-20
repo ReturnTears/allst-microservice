@@ -12,6 +12,6 @@ public class DeptConsumerApp
 {
     public static void main( String[] args )
     {
-        SpringApplication.run(DeptConsumerApp.class);
+        SpringApplication.run(DeptConsumerApp.class, args);
     }
 }
