@@ -40,7 +40,7 @@ RestTemplate提供了多种便捷访问远程Http服务的方法
 ```
 
 ### Eureka
-```
+```text
 Netflix在设计Eureka时遵守的是AP原则
 Eureka是Netflix的一个子模块, 也是核心模块之一, Eureka是一个基于REST的服务, 用于定位服务, 以实现云端中间层服务发现和故障转移. 服务注册与发现对于微服务
 架构来说是非常重要的,有了服务发现与注册, 只需要使用服务的标识符, 就可以访问到服务,而不需要修改服务调用的配置文件了.
@@ -68,31 +68,6 @@ Eureka Client是一个Java客户端,用于简化Eureka Server的交互, 客户�
 Eureka Server提供服务注册和发现
 Service Provider服务提供方将自身服务注册到Eureka, 从而使服务消费方可以找到
 Service Consumer服务消费方从Eureka获取注册服务列表, 从而能够消费服务
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
