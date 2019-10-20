@@ -38,3 +38,36 @@ RestTemplate提供了多种便捷访问远程Http服务的方法
 
 使用RestTemplate访问restful接口非常的简单, (url, requestMap, responseBean这三个参数分别代表REST请求地址, 请求参数,HTTP响应转换被转换成的对象类型)
 ```
+
+### Eureka
+```
+Netflix在设计Eureka时遵守的是AP原则
+Eureka是Netflix的一个子模块, 也是核心模块之一, Eureka是一个基于REST的服务, 用于定位服务, 以实现云端中间层服务发现和故障转移. 服务注册与发现对于微服务
+架构来说是非常重要的,有了服务发现与注册, 只需要使用服务的标识符, 就可以访问到服务,而不需要修改服务调用的配置文件了.
+功能类似于dubbo的注册中心, 比如zookeeper
+
+Eureka采用了CS的设计架构, Eureka Server作为服务注册功能的服务器, 它是服务注册中心
+
+而系统中的其他服务, 使用Eureka的客户端连接到Eureka Server并维持心跳链接.
+这样系统的维护人员就可以通过Eureka Server来监控系统中各个微服务是否正常运行. 
+Spring Cloud的一些其他模块(比如Zuul)就可以通过Eureka Server来发现系统中的其他微服务, 并执行相关的逻辑
+
+Eureka于dubbo的对比:
+https://www.jianshu.com/p/e47c027a9aeb
+Eureka服务治理:
+![Image](https://github.com/ReturnTears/allst-microservice/blob/master/cimg/eureka.png)
+Dubbo服务治理:
+![Image](https://github.com/ReturnTears/allst-microservice/blob/master/cimg/dubbo.png)
+
+
+
+
+
+
+
+
+
+
+
+
+```
