@@ -10,6 +10,7 @@
     <modules>
         <module>allst-microservice-api</module>
         <module>allst-microservice-provider</module>
+        <module>allst-microservice-consumer</module>
     </modules>
     <packaging>pom</packaging>
     <name>allst-microservice</name>

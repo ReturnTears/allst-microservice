@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="allst-microservice-api" />
+        <module name="allst-microservice-consumer" />
         <module name="allst-microservice-provider" />
       </profile>
     </annotationProcessing>
