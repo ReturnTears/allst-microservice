@@ -58,6 +58,30 @@ Eureka服务治理:
 ![Image](https://github.com/ReturnTears/allst-microservice/blob/master/cimg/eureka.png)
 Dubbo服务治理:
 ![Image](https://github.com/ReturnTears/allst-microservice/blob/master/cimg/dubbo.png)
+Eureka包含两个组件:Eureka Server和Eureka Client
+Eureka Server提供服务注册服务
+各个节点启动后, 会在Eureka Server中进行注册,这样Eureka Server中的服务注册表将会存储所有可用服务节点的信息, 服务节点的信息可用在界面中直观的看到
+Eureka Client是一个Java客户端,用于简化Eureka Server的交互, 客户端同时具备一个内置的,使用轮询(round-robin)负载算法的负载均衡器
+在应用启动后,将会向Eureka Server发送心跳(默认周期为30秒), 如果Eureka Server在多个心跳周期内没有接收到某个节点的心跳,Eureka Server
+将会从服务注册表中把这个服务节点溢出(默认90秒)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
