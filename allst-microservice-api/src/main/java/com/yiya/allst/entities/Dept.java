@@ -35,12 +35,12 @@ public class Dept implements Serializable { // 必须序列化
     /**
      * 部门名称
      */
-    private Long dname;
+    private String dname;
     /**
      * 来自那个数据库
      * 微服务架构可以一个服务对应一个数据库, 同一个信息被存储到不同数据库
      */
-    private Long db_source;
+    private String db_source;
 
 
 }
