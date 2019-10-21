@@ -36,7 +36,7 @@
             <dependency>
               <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-dependencies</artifactId>
-              <version>2.0.0.RELEASE</version>
+              <version>1.5.6.RELEASE</version>
               <type>pom</type>
               <scope>import</scope>
             </dependency>
@@ -74,9 +74,27 @@
           </dependencies>
     </dependencyManagement>
 
-
-  <!--<build>
-    <pluginManagement>
+    <!-- 父工程配置build构建信息 -->
+  <build>
+      <finalName>allst-microservice</finalName>
+      <resources>
+          <resource>
+              <directory>src/main/resources</directory>
+              <filtering>true</filtering>
+          </resource>
+      </resources>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-resources-plugin</artifactId>
+              <configuration>
+                  <delimiters>
+                      <delimit>$</delimit>
+                  </delimiters>
+              </configuration>
+          </plugin>
+      </plugins>
+    <!--<pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -115,7 +133,7 @@
           <version>3.0.0</version>
         </plugin>
       </plugins>
-    </pluginManagement>
-  </build>-->
+    </pluginManagement>-->
+  </build>
 
 </project>

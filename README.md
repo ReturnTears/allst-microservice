@@ -66,6 +66,30 @@ Eureka Server提供服务注册和发现
 Service Provider服务提供方将自身服务注册到Eureka, 从而使服务消费方可以找到
 Service Consumer服务消费方从Eureka获取注册服务列表, 从而能够消费服务
 
+
+eureka的自我保护机制:
+某一时刻某个微服务不可用了, eureka不会立刻清理, 依旧会对该微服务的信息进行保存
+默认情况下, 如果EurekaServer在一定时间内没有接收到某个微服务实例的心跳, EurekaServer将会注销该实例(默认90秒)
+但是当网络分区故障发生时, 微服务与EurekaServer之间无法通信, 以上行为可能变得非常危险了--因为微服务本身其实是健康的, 此时本不应该注销该微服务.
+Eureka通过"自我保护模式"来解决这个问题--当EurekaServer节点在短时间内丢失过多客户端时(可能发生了网络分区故障), 那么这个节点就会进入自我保护模式. 一旦进入该模式,
+Eureka就会保护服务注册表中的信息, 不再删除服务注册表中的数据(也就是不会注销任何微服务).当网络故障回复后, 该Eureka Server节点会自动退出自我保护模式.
+
+在自我保护模式下, Eureka Server会保护注册表中的信息, 不再注销任何服务实例, 当它收到的心跳数重新恢复到阈值以上时,
+该Eureka server节点就会自动退出自我保护模式, 他的设计哲学就是宁可保留错误的服务注册信息, 也不盲目注销任何可能健康的服务实例
+
+在Spring cloud中, 可以使用eureka.server.enable-self-preservation=false禁用自我保护模式
+
+
+
+
+
+
+
+
+
+
+
+
 ```
 Eureka服务治理:
 ![Image](https://github.com/ReturnTears/allst-microservice/blob/master/cimg/eureka.png)
