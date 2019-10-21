@@ -54,10 +54,7 @@ Spring Cloud的一些其他模块(比如Zuul)就可以通过Eureka Server来发�
 
 Eureka于dubbo的对比:
 https://www.jianshu.com/p/e47c027a9aeb
-Eureka服务治理:
-![Image](https://github.com/ReturnTears/allst-microservice/blob/master/cimg/eureka.png)
-Dubbo服务治理:
-![Image](https://github.com/ReturnTears/allst-microservice/blob/master/cimg/dubbo.png)
+
 Eureka包含两个组件:Eureka Server和Eureka Client
 Eureka Server提供服务注册服务
 各个节点启动后, 会在Eureka Server中进行注册,这样Eureka Server中的服务注册表将会存储所有可用服务节点的信息, 服务节点的信息可用在界面中直观的看到
@@ -69,6 +66,8 @@ Eureka Server提供服务注册和发现
 Service Provider服务提供方将自身服务注册到Eureka, 从而使服务消费方可以找到
 Service Consumer服务消费方从Eureka获取注册服务列表, 从而能够消费服务
 
-
-
 ```
+Eureka服务治理:
+![Image](https://github.com/ReturnTears/allst-microservice/blob/master/cimg/eureka.png)
+Dubbo服务治理:
+![Image](https://github.com/ReturnTears/allst-microservice/blob/master/cimg/dubbo.png)
