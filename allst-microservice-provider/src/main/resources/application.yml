@@ -26,7 +26,8 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7001/eureka/
+      # 单机版配置defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://eurekamaster:7001/eureka/,http://eurekaslave1:7002/eureka/,http://eurekaslave2:7003/eureka/
   instance:
     instance-id: mircoservice8001                      # DS Replicas Status 的别名
     prefer-ip-address: true                            # URL的提升信息显示IP地址

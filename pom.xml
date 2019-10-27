@@ -12,6 +12,8 @@
         <module>allst-microservice-provider</module>
         <module>allst-microservice-consumer</module>
         <module>allst-microservice-eureka</module>
+        <module>allst-microservice-eureka-slave1</module>
+        <module>allst-microservice-eureka-slave2</module>
     </modules>
     <packaging>pom</packaging>
     <name>allst-microservice</name>

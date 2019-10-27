@@ -79,18 +79,51 @@ Eureka就会保护服务注册表中的信息, 不再删除服务注册表中的
 
 在Spring cloud中, 可以使用eureka.server.enable-self-preservation=false禁用自我保护模式
 
-
-
-
-
-
-
-
+Eureka的集群搭建
+allst-mircoservice-eureka是master
+allst-mircoservice-eureka-slave1是slave1节点
+allst-mircoservice-eureka-slave2是slave2节点
+Slave的POM配置和master一致
+添加服务启动类
+修改本地的hosts域名映射
+修改三台eureka服务的yml配置
+将eurekaslave相关的两台服务配置到provider服务中
 
 
 
 
 ```
+
+**CAP**
+```text
+
+RDBMS (mysql/oracle/sqlserver) 遵循 ACID
+A atomicity原子性
+C consistency一致性
+I isolation独立性
+D durability持久性
+
+NOSQL (redis/mongdb) 遵循 CAP
+C consistency 强一致性
+A availability 可用性
+P partition tolerance 分区容错性
+
+任何一个分布式系统目前只能较好的满足其中的两个特性
+CAP理论的核心是: 一个分布式系统不可能同时满足一致性,可用性和分区容错性这三个需求, 
+根据CAP原理将NoSQL数据库分成了满足CA原则, CP原则, AP原则三类:
+CA: 单点集群, 满足一致性, 可用性的系统, 通常在扩展性上不太强大
+CP: 满足一致性, 分区容错性, 通常性能不是特别高
+AP: 满足可用性, 分区容错性, 通常对一致性要求较低
+
+zookeeper保证CP
+eureka保证AP
+```
+CAP:
+![Image](https://github.com/ReturnTears/allst-microservice/blob/master/cimg/cap1.png)
+![Image](https://github.com/ReturnTears/allst-microservice/blob/master/cimg/cap2.png)
+
+
+
 Eureka服务治理:
 ![Image](https://github.com/ReturnTears/allst-microservice/blob/master/cimg/eureka.png)
 Dubbo服务治理:

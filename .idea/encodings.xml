@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/allst-microservice-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/allst-microservice-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/allst-microservice-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/allst-microservice-eureka-slave1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/allst-microservice-eureka-slave2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/allst-microservice-provider" charset="UTF-8" />
   </component>
 </project>
