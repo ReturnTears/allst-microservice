@@ -1,5 +1,7 @@
 package com.yiya.allst.cfgbeans;
 
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RandomRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,4 +20,13 @@ public class ConfigBean {
         return new RestTemplate();
     }
 
+    /**
+     * 默认时轮询算法, 下面是我们自定义的随机算法代替轮询
+     * @return
+     *          算法
+     */
+    @Bean
+    public IRule myRule() {
+        return new RandomRule();
+    }
 }
