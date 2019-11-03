@@ -1,0 +1,40 @@
+server:
+  port: 8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml  # mybatis配置文件所在路径
+  type-aliases-package: com.yiya.allst.entities       # 所有Entity别名类所在包
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml               # mapper映射文件
+
+spring:
+  application:
+    name: allst-microservice-dept                     # 对外暴露的微服务名称, 很重要
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource      # 当前数据源操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver       # MySQL驱动包
+    url: jdbc:mysql://127.0.0.1:3306/cloudDBOne?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC       # 数据库连接URL及名称
+    username: root
+    password: 123456
+    dbcp2:
+      min-idle: 5                                     # 数据库连接池的最小维持连接数
+      initial-size: 5                                 # 初始化连接数
+      max-idle: 5                                     # 最大连接数
+      max-wait-millis: 200                            # 等待连接获取的最大超时时间
+
+# 将client注册进eureka服务列表
+eureka:
+  client:
+    service-url:
+      # 单机版配置defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://eurekamaster:7001/eureka/,http://eurekaslave1:7002/eureka/,http://eurekaslave2:7003/eureka/
+  instance:
+    #instance-id: mircoservice8001                      # DS Replicas Status 的别名
+    instance-id: mircoservice8001-hystrix              # 自定义hystrix相关的服务名称信息
+    prefer-ip-address: true                            # URL的提升信息显示IP地址
+
+info:
+  app.name: microservicecloud
+  company.name: www.yiya.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

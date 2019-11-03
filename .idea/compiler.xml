@@ -13,6 +13,7 @@
         <module name="allst-microservice-eureka-slave2" />
         <module name="allst-microservice-feign" />
         <module name="allst-microservice-provider" />
+        <module name="allst-mircoservice-hystrix" />
         <module name="allst-mircoservice-provider1" />
         <module name="allst-mircoservice-provider2" />
       </profile>
