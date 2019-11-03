@@ -2,7 +2,6 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <!-- 子类中显示声明才能有明确的继承体现,默认为同父类版本, 否则自己定义 -->
     <parent>
         <artifactId>allst-microservice</artifactId>
         <groupId>com.yiya.allst</groupId>
@@ -10,10 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>allst-microservice-api</artifactId>
+    <artifactId>allst-microservice-feign</artifactId>
 
-    <name>allst-microservice-api</name>
-
+    <name>allst-microservice-feign</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,10 +20,19 @@
     </properties>
 
     <dependencies>
-        <!-- 当前Module需要用到的jar, 按需添加, 如果父类中已经包含了, 可以不用写版本号 -->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>com.yiya.allst</groupId>
+            <artifactId>allst-microservice-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- 添加ribbon相关 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
         <!-- 添加feign相关 -->
         <dependency>
@@ -33,13 +40,16 @@
             <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
     </dependencies>
 
-   <!--<build>
+    <!--<build>
         <pluginManagement>
             <plugins>
                 <plugin>

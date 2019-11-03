@@ -126,6 +126,23 @@ Ribbon的核心组件IRule: 根据特定算法中从服务列表中选取一个�
 Ribbon & Feign & Nginx的区别 
 ```
 
+**Feign**
+```
+Feigin是一个声明式的Web服务客户端, 使得编写Web服务端变得非常容易,只需要创建一个接口, 然后在接口添加注解即可
+https://github.com/OpenFeign/feign
+
+Feign能干什么
+Feign旨在使编写Java Http客户端变得更容易
+在使用Ribbon+RestTemplate时, 利用RestTemplate对HTTP请求的封装处理, 形成了一套模板化的调用方法, 但是在实际开发中, 由于对服务依赖的调用可能不止一处,
+往往一个接口会被多处调用, 所以通常都会针对每一个微服务封装一些客户端类来包装这些依赖服务的调用. 所以, feign在此注解上做了进一步封装, 由他来帮我们定义和实现依赖服务接口的定义, 在feign的实现下,
+我们只需要创建一个接口并使用注解的方式来配置它(以前是Dao接口上面标注Mapper注解, 现在是一个微服务接口上面标注一个Feign注解即可),即完成对服务提供方的接口绑定,
+简化了使用SpringCloud Ribbon时,自动封装服务调用客户端的开发量
+
+Feign集成了Ribbon
+利用Ribbon维护了MicroServiceCLoud-Dept的服务列表信息, 并且通过轮询实现了客户端的负载均衡, 而与ribbon不同的是,
+通过feign只需要定义服务绑定接口且以声明式的方法, 优雅而简单的实现了服务调用
+
+```
 
 **CAP**
 ```text

@@ -16,6 +16,7 @@
         <module>allst-microservice-eureka-slave2</module>
         <module>allst-mircoservice-provider1</module>
         <module>allst-mircoservice-provider2</module>
+        <module>allst-microservice-feign</module>
     </modules>
     <packaging>pom</packaging>
     <name>allst-microservice</name>
