@@ -10,7 +10,7 @@
 
 ## Maven分包分模块搭建
 ```text
-allst-microservice整体夫工程Project
+allst-microservice整体父工程Project
 父工程的Packageing是pom模式, 主要是定义POM文件, 后续将各个子模块共用的jar包等统一提取出来, 类似一个抽象的父类
 dependencyManagement 是父类工程的管理机制
 
